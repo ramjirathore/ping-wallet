@@ -1,0 +1,180 @@
+body{
+	/*overflow-y:visible;*/
+}
+/* width */
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+.footer{
+	padding: 0px 0px 0px 0px;
+	margin-left: 0px;
+	margin-top: 60px;
+    margin-bottom: 0px;
+
+
+}
+.textHead{
+	padding-left: 40px; 
+	padding-top: 10px;
+	padding-bottom: 0px;
+}
+.Spacing{
+	margin-top: 40px;
+}
+.top{
+    /*background-color: #00ace6;*/
+    font-color: black;
+    margin-bottom: 0px;
+    border-radius: 0;
+}
+.top  ul li a{
+	color: white;
+}
+
+.navbar-header a{
+	color:#ffffff;
+}
+
+a
+{
+	text-align: center;
+}
+
+.try a{
+	margin: 30px;
+	color:white;
+}
+.try{
+	
+	margin-top:10px;
+	margin-bottom: -40px;
+	padding-bottom: 10px;
+	background-color: #00ace6 ;
+	border-radius: 10px;
+}
+.try i{
+
+	font-size: 40px;
+	color: white;
+}
+.try li{
+	margin-left: 10px;
+	margin-right:10px;
+}
+.try .caption{
+	margin-top: 10px;
+}
+
+.mid{
+	/*background-color: #00264d;*/
+	background-height: 50px !important;
+
+}
+
+.inner{
+	background-color:  #d9d9d9;
+	background-height: 180px;
+	border-radius: 7px;
+	margin-top: 10px;
+}
+.inner form input{
+	margin: 20px;
+	float: left;
+}
+.inner h4 .carousel-caption h3{
+	font-size: 20px;
+    font-weight: 700;
+    margin-top: 15px
+}
+.inner label{
+	padding-left: 30px;
+    text-align: left;
+    color: #999;
+    top: 0!important;
+    font-size: 15px
+}
+
+.caption{
+	text-align: center;
+	color:#ffffff;
+}
+
+form .input{
+	width: 300px;
+}
+.bBar{
+	padding: 0px;	
+}
+.bookingBar{
+	margin-top: 20px;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	background-color: #d9d9d9;
+}
+.bookingBar i{
+
+	font-size:30px;
+	color: #000000;
+}
+.bookingBar li{
+	margin-left: 15px;
+	margin-right: 15px;
+	padding: 0px;
+}
+.bookingBar .caption{
+	margin-top:10px;
+	color: #000000;
+}
+.bookingBar a{
+	margin: 13px; 
+	padding: 2px;
+}
+
+.Shopping{
+	background-color: #737373;
+	padding:0px 0px 0px 0px;
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.cara{
+	/*border-radius: 7px;*/
+	padding: -2px;
+	margin: 0px;
+}
+.carousel-inner img
+{
+	padding: 10px;
+	margin-right: 5px;
+	margin-left: 5px; 
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width:16.12%;
+	float: left;
+}
+.carosel-inner .Indi{
+	margin-bottom: 10px;
+	margin-top: 10px;
+
+}
+.footColor{
+	background-color: #005cb3;
+}
+.footColor .footText{
+	font-color: white;
+}
