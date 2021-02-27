@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
-	<link rel="icon" type="image/png" href="assets/img/favicon.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="AddOn/img/apple-icon.png">
+	<link rel="icon" type="image/png" href="AddOn/img/favicon.png">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<title>ADD MONEY</title>
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -13,14 +13,14 @@
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
 
 	<!-- CSS Files -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-	<link href="assets/css/gsdk-bootstrap-wizard.css" rel="stylesheet" />
+    <link href="AddOn/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="AddOn/css/gsdk-bootstrap-wizard.css" rel="stylesheet" />
 
 	
 </head>
 
 <body>
-<div class="image-container set-full-height" style="background-image:url('assets/img/wizard.jpg')">
+<div class="image-container set-full-height" style="background-image:url('AddOn/img/wizard.jpg')">
 	
 
     <!--   Big container   -->
@@ -65,7 +65,7 @@
                                         <input name="pass" type="Password" class="form-control">    
                                       <div class="col-sm-6 col-sm-offset-3">
                                         <br>
-                                      <a href = "paytm.html"><input type="submit" class="btn btn-info btn-block btn-primary active" value="PAY"></a>
+                                      <input type="submit" class="btn btn-info btn-block btn-primary active" value="PAY">
                                       </div>
 
                                   </div>
@@ -90,12 +90,12 @@
 
 
 	<!--   Core JS Files   -->
-	<script src="assets/js/jquery-2.2.4.min.js" type="text/javascript"></script>
-	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="assets/js/jquery.bootstrap.wizard.js" type="text/javascript"></script>
+	<script src="AddOn/js/jquery-2.2.4.min.js" type="text/javascript"></script>
+	<script src="AddOn/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="AddOn/js/jquery.bootstrap.wizard.js" type="text/javascript"></script>
 
 	<!--  Plugin for the Wizard -->
-	<script src="assets/js/gsdk-bootstrap-wizard.js"></script>
-	<script src="assets/js/jquery.validate.min.js"></script>
+	<script src="AddOn/js/gsdk-bootstrap-wizard.js"></script>
+	<script src="AddOn/js/jquery.validate.min.js"></script>
 
 </html>

@@ -97,15 +97,12 @@ while($row=mysqli_fetch_array($ch,MYSQLI_ASSOC))
   <script>
 var myWindow;
 function Win() {
-  window.open('http://localhost/pro/paytm.php','_blank');
+  window.open('paytm.php','_blank');
   window.close();
 }
-$(document).ready(function() {
-$('.mdb-select').materialSelect();
-});
 </script>
 </head>
-<body background="back2.jpg">
+<body background="assets/back2.jpg">
 
 
 <nav class="navbar navbar-inverse top">
@@ -185,13 +182,13 @@ $('.mdb-select').materialSelect();
               <button class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown">Select Operator
               <span class="caret"></span></button>
                 <ul class="dropdown-menu">
-                  <li><a href="#"><img src="airtel.jpg" class="img-circle" alt="Cinque Terre" width="30" height="30"> 
+                  <li><a href="#"><img src="assets/airtel.jpg" class="img-circle" alt="Cinque Terre" width="30" height="30"> 
                   <strong>Airtel Digital TV</strong></a></li>
-                  <li><a href="#"><img src="d2h.jpg" class="img-circle" alt="Cinque Terre" width="30" height="30"> 
+                  <li><a href="#"><img src="assets/d2h.jpg" class="img-circle" alt="Cinque Terre" width="30" height="30"> 
                   <strong>Videocon d2h</strong></a></li>                 
-                  <li><a href="#"><img src="tatasky.png" class="img-circle" alt="Cinque Terre" width="30" height="30"> 
+                  <li><a href="#"><img src="assets/tatasky.png" class="img-circle" alt="Cinque Terre" width="30" height="30"> 
                   <strong>Tata Sky</strong></a></li>
-                  <li><a href="#"><img src="dishtv.gif" class="img-circle" alt="Cinque Terre" width="30" height="30"> 
+                  <li><a href="#"><img src="assets/dishtv.gif" class="img-circle" alt="Cinque Terre" width="30" height="30"> 
                   <strong>Dish TV</strong></a></li>
                 </ul>
           </div>

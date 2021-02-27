@@ -11,7 +11,6 @@ if(!$conn)
 	die("failed");
 }
 
-
 $fName = $_POST['firstName'];
 $lName = $_POST['lastName'];
 $mob = $_POST["mobNo"];

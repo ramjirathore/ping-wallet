@@ -4,7 +4,7 @@
 	<title>NOTIFICATIONS</title>
 		<style type="text/css">
 		body{
-			background-image: url('noti.jpg');
+			background-image: url('assets/noti.jpg');
 			background-size: auto;                      
     		background-repeat:   no-repeat;
     		/*background-position: center center;*/
