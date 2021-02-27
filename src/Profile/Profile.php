@@ -16,38 +16,38 @@
 	<!-- CSS Files -->
   <link href="../../AddOn/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="../../AddOn/css/gsdk-bootstrap-wizard.css" rel="stylesheet" />
-  <?php
-        session_start();
 
-      $name = "";
-      $email= "";
-      $aadhaar = "";
+<?php
+session_start();
+
+$name = "";
+$email= "";
+$aadhaar = "";
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "Paytm"; 
-$conn = mysqli_connect($servername, $username, $password ,$database);
+$database = "Paytm";
+$conn = mysqli_connect($servername, $username, $password, $database);
 
-  //session_start();
+//session_start();
 
-        $mobNo = $_SESSION['regName'];
-        $sql = 'select * from signup';
-        $ch = mysqli_query($conn,$sql);
+$mobNo = $_SESSION['regName'];
+$sql = 'select * from signup';
+$ch = mysqli_query($conn, $sql);
 
-while($row=mysqli_fetch_array($ch,MYSQLI_ASSOC))
-{
-  if($mobNo == $row['MobileNo'])
-  {
-    $name = $row['FirstName'].' '.$row['LastName'];
-    $email = $row['Email'];
-    $aadhaar = $row['Aadhaar'];
-    break;
-  }
+while ($row=mysqli_fetch_array($ch, MYSQLI_ASSOC)) {
+    if ($mobNo == $row['MobileNo']) {
+        $name = $row['FirstName'].' '.$row['LastName'];
+        $email = $row['Email'];
+        $aadhaar = $row['Aadhaar'];
+        break;
+    }
 }
-        mysqli_close($conn);
-       // $mobNo = $_SESSION['regName'];
 
+mysqli_close($conn);
+// $mobNo = $_SESSION['regName'];
 ?>
+
 <style>
 body {font-family: Arial;}
 

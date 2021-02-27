@@ -1,67 +1,56 @@
-	<?php
+<?php
 
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "Paytm"; 
-$conn = mysqli_connect($servername, $username, $password ,$database);
+$database = "Paytm";
+$conn = mysqli_connect($servername, $username, $password, $database);
 
 $amnt = $_POST['amnt'];
 $mobNoTo = $_POST['mobNo'];
-$pass = $_POST['pass']; 
-        session_start();
-        $mobNoFrom = $_SESSION['regName'];
-        
-        $sql1 = "SELECT MobileNo, Password from signup WHERE MobileNo = $mobNoFrom AND Password = '$pass'";
-        $query=mysqli_query($conn,$sql1);
+$pass = $_POST['pass'];
+session_start();
+$mobNoFrom = $_SESSION['regName'];
 
-        $tellBal = "SELECT `Bal` from Balance WHERE MobileNo = $mobNoFrom";
-        $queryBal = mysqli_query($conn, $tellBal);
-        $row = mysqli_fetch_array($queryBal);
-        $Bal = $row[0];
-        
+$sql1 = "SELECT MobileNo, Password from signup WHERE MobileNo = $mobNoFrom AND Password = '$pass'";
+$query=mysqli_query($conn, $sql1);
 
-        if($query && $mobNoTo != $mobNoFrom && $Bal > $amnt)
-        {
-            $check = "SELECT MobileNo from signup WHERE MobileNo = $mobNoTo";
-            if(mysqli_query($conn, $check))
-            {
-                date_default_timezone_set("Asia/Kolkata");
-                $dt = date("Y-m-d");
-                $tm = date("H:i:s");
+$tellBal = "SELECT `Bal` from Balance WHERE MobileNo = $mobNoFrom";
+$queryBal = mysqli_query($conn, $tellBal);
+$row = mysqli_fetch_array($queryBal);
+$Bal = $row[0];
 
-                // To this number
-                $sqlTo = "INSERT INTO MoneyCredited VALUES ($mobNoTo,$amnt,'$dt','$tm')";
-                mysqli_query($conn,$sqlTo);
+if ($query && $mobNoTo != $mobNoFrom && $Bal > $amnt) {
+    $check = "SELECT MobileNo from signup WHERE MobileNo = $mobNoTo";
+    if (mysqli_query($conn, $check)) {
+        date_default_timezone_set("Asia/Kolkata");
+        $dt = date("Y-m-d");
+        $tm = date("H:i:s");
 
-                $updtBalTo = "UPDATE Balance SET Bal = (Bal + $amnt)  WHERE MobileNo = $mobNoTo";
-                mysqli_query($conn,$updtBalTo);
+        // To this number
+        $sqlTo = "INSERT INTO MoneyCredited VALUES ($mobNoTo,$amnt,'$dt','$tm')";
+        mysqli_query($conn, $sqlTo);
 
-                // From this number
-                $sqlTo = "INSERT INTO MoneyDebited VALUES ($mobNoFrom,$amnt,'$dt','$tm')";
-                mysqli_query($conn,$sqlTo);
+        $updtBalTo = "UPDATE Balance SET Bal = (Bal + $amnt)  WHERE MobileNo = $mobNoTo";
+        mysqli_query($conn, $updtBalTo);
 
-                $updtBalFrom = "UPDATE Balance SET Bal = (Bal - $amnt)  WHERE MobileNo = $mobNoFrom";
-                mysqli_query($conn,$updtBalFrom);
-                echo "<script> alert('Payment Successful!');
-                window.location.href='../Afterlogin.php';</script>";
+        // From this number
+        $sqlTo = "INSERT INTO MoneyDebited VALUES ($mobNoFrom,$amnt,'$dt','$tm')";
+        mysqli_query($conn, $sqlTo);
 
-            }
-            
-        }
-        else if($query && $mobNoTo != $mobNoFrom && $Bal < $amnt)        
-        {
-                echo "<script> alert('Unsufficient Balance! Payment Denied.'); alert('Please Add money to Pay!');
-                window.location.href='Addmoney.php';</script>";   
-        }
-        else if($mobNoTo == $mobNoFrom)        
-        {
+        $updtBalFrom = "UPDATE Balance SET Bal = (Bal - $amnt)  WHERE MobileNo = $mobNoFrom";
+        mysqli_query($conn, $updtBalFrom);
+        echo "<script> alert('Payment Successful!');
+        window.location.href='../Afterlogin.php';</script>";
+    }
+} elseif ($query && $mobNoTo != $mobNoFrom && $Bal < $amnt) {
+    echo "<script> alert('Unsufficient Balance! Payment Denied.'); alert('Please Add money to Pay!');
+        window.location.href='Addmoney.html';</script>";
+} elseif ($mobNoTo == $mobNoFrom) {
+    echo "<script> alert('Cant Pay to yourself! Payment Denied.');
+        window.location.href='pay.html';</script>";
+} else {
+    die(mysqli_error($conn)." 1");
+}
 
-                echo "<script> alert('Cant Pay to yourself! Payment Denied.');
-                window.location.href='pay.php';</script>";   
-        }
-        else
-            die(mysqli_error($conn)." 1");
-
-        mysqli_close($conn);
-?>
+mysqli_close($conn);

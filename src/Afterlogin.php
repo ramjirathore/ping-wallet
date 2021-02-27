@@ -10,55 +10,52 @@
 
 <?php
         session_start();
-function user() {
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "Paytm"; 
-$conn = mysqli_connect($servername, $username, $password ,$database);
-
-  //session_start();
-
-        $mobNo = $_SESSION['regName'];
-        $newMob = $mobNo;
-        $sql = 'select FirstName, MobileNo from signup';
-        $ch = mysqli_query($conn,$sql);
-
-
-while($row=mysqli_fetch_array($ch,MYSQLI_ASSOC))
+function user()
 {
-  if($mobNo == $row['MobileNo'])
-  {
-      echo $row['FirstName'];
-      break;
-  }
-}
-       // $mobNo = $_SESSION['regName'];
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "Paytm";
+    $conn = mysqli_connect($servername, $username, $password, $database);
+
+    //session_start();
+
+    $mobNo = $_SESSION['regName'];
+    $newMob = $mobNo;
+    $sql = 'select FirstName, MobileNo from signup';
+    $ch = mysqli_query($conn, $sql);
+
+
+    while ($row=mysqli_fetch_array($ch, MYSQLI_ASSOC)) {
+        if ($mobNo == $row['MobileNo']) {
+            echo $row['FirstName'];
+            break;
+        }
+    }
+    // $mobNo = $_SESSION['regName'];
   
-  mysqli_close($conn);
-
+    mysqli_close($conn);
 }
-function bal() {
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "Paytm"; 
-$conn = mysqli_connect($servername, $username, $password ,$database);
-
-  //session_start();
-
-        $mobNo = $_SESSION['regName'];
-        $sql = "select MobileNo, Bal from Balance";
-        $ch = mysqli_query($conn,$sql);
-while($row=mysqli_fetch_array($ch,MYSQLI_ASSOC))
+function bal()
 {
-  if($row['MobileNo'] == $mobNo)
-  {
-      echo $row['Bal']." ";
-      break;
-  }
-}
-  mysqli_close($conn);
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $database = "Paytm";
+    $conn = mysqli_connect($servername, $username, $password, $database);
+
+    //session_start();
+
+    $mobNo = $_SESSION['regName'];
+    $sql = "select MobileNo, Bal from Balance";
+    $ch = mysqli_query($conn, $sql);
+    while ($row=mysqli_fetch_array($ch, MYSQLI_ASSOC)) {
+        if ($row['MobileNo'] == $mobNo) {
+            echo $row['Bal']." ";
+            break;
+        }
+    }
+    mysqli_close($conn);
 }
 ?>
   <style>
@@ -126,10 +123,10 @@ function Win() {
 
       <div class="navbar navbar-inverse try col-sm-10">
         <ul class="nav navbar-nav col-sm-8">
-          <li><a href="./Pay/pay.php"><i class="fab fa-amazon-pay"></i><div class="caption">PAY</div></a></li>
-          <li><a href="./AddMoney/Addmoney.php"><i class="fas fa-rupee-sign" ></i><div class="caption">ADD MONEY</div></a></li>
+          <li><a href="./Pay/pay.html"><i class="fab fa-amazon-pay"></i><div class="caption">PAY</div></a></li>
+          <li><a href="./AddMoney/Addmoney.html"><i class="fas fa-rupee-sign" ></i><div class="caption">ADD MONEY</div></a></li>
           <li><a href="./Passbook.php"><i class="fas fa-book"></i><div class="caption">PASSBOOK</div></a></li>
-          <li><a href="./RequestPayment/RequestPayment.php"><i class="far fa-arrow-alt-circle-down"></i><div class="caption">REQUEST PAYMENT</div></a></li>
+          <li><a href="./RequestPayment/RequestPayment.html"><i class="far fa-arrow-alt-circle-down"></i><div class="caption">REQUEST PAYMENT</div></a></li>
           <li><a href="./Profile/Profile.php"><i class="fas fa-user"></i><div class="caption">PROFILE</div></a></li>
         </ul>
         <ul>
@@ -145,7 +142,7 @@ function Win() {
         <h4>Mobile Recharge or Bill Payment</h4>
       
 
-        <form class="form-inline" action = "deductDth.php" method="POST">
+        <form class="form-inline" action = "./Pay/deductDth.php" method="POST">
 
           <input type="Number" name="" class="form-control input" placeholder="Mobile Number">
           

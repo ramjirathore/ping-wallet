@@ -4,7 +4,7 @@
 	<title>NOTIFICATIONS</title>
 		<style type="text/css">
 		body{
-			background-image: url('../assets/noti.jpg');
+			background-image: url('../../assets/noti.jpg');
 			background-size: auto;                      
     		background-repeat:   no-repeat;
     		/*background-position: center center;*/
@@ -62,6 +62,7 @@
 	</div>
 
 <?php
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -75,50 +76,46 @@ $tm = "";
 $amount = "";
 
 session_start();
-	$mobNo= $_SESSION['regName'];
-	$not = "select * from Notification order by Time desc";
-	$query = mysqli_query($conn, $not);
-	$count = 0;
-while($row=mysqli_fetch_array($query,MYSQLI_ASSOC))
-{
-	if($mobNo == $row['MobileNoTo'])
-	{
-		$dt = $row["Date"];
-		$tm =$row["Time"];
-		$message = $row['Message'];
-		$amount = $row['Amount'];
+$mobNo= $_SESSION['regName'];
+$not = "select * from Notification order by Time desc";
+$query = mysqli_query($conn, $not);
+$count = 0;
 
-		$mobFrom = $row["MobileNoFrom"];
-		
-		$srch = "select FirstName from signup where `MobileNo` = $mobFrom";
-		$run = mysqli_query($conn, $srch);
-		$value = mysqli_fetch_array($run);
+while ($row=mysqli_fetch_array($query, MYSQLI_ASSOC)) {
+    if ($mobNo == $row['MobileNoTo']) {
+        $dt = $row["Date"];
+        $tm =$row["Time"];
+        $message = $row['Message'];
+        $amount = $row['Amount'];
 
-		$name = $value[0];
+        $mobFrom = $row["MobileNoFrom"];
+        
+        $srch = "select FirstName from signup where `MobileNo` = $mobFrom";
+        $run = mysqli_query($conn, $srch);
+        $value = mysqli_fetch_array($run);
 
-		if(!$count)
-		{
-			$html = '<div class="bs-example"> 
+        $name = $value[0];
+
+        if (!$count) {
+            $html = '<div class="bs-example"> 
     				<div class="alert alert-info alert-dismissible fade show">
 	        			<strong>New!</strong> '.$name." has requested Rs ".$amount." from you at ".$tm." on ".$dt."&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Message: ".$message.'
 	        			<button type="button" class="close" data-dismiss="alert">&times;</button>
 	    			</div>
 				</div>';
-			echo $html;
-		}
-		else
-		{
-			$html = '<div class="bs-example"> 
+            echo $html;
+        } else {
+            $html = '<div class="bs-example"> 
     				<div class="alert alert-warning alert-dismissible fade show">'.$name." has requested Rs ".$amount." from you at ".$tm." on ".$dt."&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Message: ".$message.'
 	        			<button type="button" class="close" data-dismiss="alert">&times;</button>
 	    			</div>
 				</div>';
-			echo $html;
-		}
-		$count = 1;
-	}
-	
+            echo $html;
+        }
+        $count = 1;
+    }
 }
+
 mysqli_close($conn);
 ?>
 </body>
