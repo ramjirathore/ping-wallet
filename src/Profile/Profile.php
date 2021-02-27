@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
-	<link rel="icon" type="image/png" href="assets/img/favicon.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="../../AddOn/img/apple-icon.png">
+	<link rel="icon" type="image/png" href="../../AddOn/img/favicon.png">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<title>PROFILE</title>
 
@@ -14,40 +14,40 @@
   <link href="http://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
 
 	<!-- CSS Files -->
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-	<link href="assets/css/gsdk-bootstrap-wizard.css" rel="stylesheet" />
-  <?php
-        session_start();
+  <link href="../../AddOn/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="../../AddOn/css/gsdk-bootstrap-wizard.css" rel="stylesheet" />
 
-      $name = "";
-      $email= "";
-      $aadhaar = "";
+<?php
+session_start();
+
+$name = "";
+$email= "";
+$aadhaar = "";
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "Paytm"; 
-$conn = mysqli_connect($servername, $username, $password ,$database);
+$database = "Paytm";
+$conn = mysqli_connect($servername, $username, $password, $database);
 
-  //session_start();
+//session_start();
 
-        $mobNo = $_SESSION['regName'];
-        $sql = 'select * from signup';
-        $ch = mysqli_query($conn,$sql);
+$mobNo = $_SESSION['regName'];
+$sql = 'select * from signup';
+$ch = mysqli_query($conn, $sql);
 
-while($row=mysqli_fetch_array($ch,MYSQLI_ASSOC))
-{
-  if($mobNo == $row['MobileNo'])
-  {
-    $name = $row['FirstName'].' '.$row['LastName'];
-    $email = $row['Email'];
-    $aadhaar = $row['Aadhaar'];
-    break;
-  }
+while ($row=mysqli_fetch_array($ch, MYSQLI_ASSOC)) {
+    if ($mobNo == $row['MobileNo']) {
+        $name = $row['FirstName'].' '.$row['LastName'];
+        $email = $row['Email'];
+        $aadhaar = $row['Aadhaar'];
+        break;
+    }
 }
-        mysqli_close($conn);
-       // $mobNo = $_SESSION['regName'];
 
+mysqli_close($conn);
+// $mobNo = $_SESSION['regName'];
 ?>
+
 <style>
 body {font-family: Arial;}
 
@@ -107,7 +107,7 @@ kbd{
 </head>
 
 <body>
-<div class="image-container set-full-height" style="background-image: url('assets/img/wizard.jpg')">
+<div class="image-container set-full-height" style="background-image: url('../../AddOn/img/wizard.jpg')">
 <div class="tab">
   <button class="tablinks" onclick="openCity(event, 'Personal Info')">Personal Info</button>
   <button class="tablinks" onclick="openCity(event, 'Change Password')">Change Password</button>
@@ -202,13 +202,13 @@ function openCity(evt, cityName) {
 </body>
 
 	<!--   Core JS Files   -->
-	<script src="assets/js/jquery-2.2.4.min.js" type="text/javascript"></script>
-	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="assets/js/jquery.bootstrap.wizard.js" type="text/javascript"></script>
+	<script src="../../AddOn/js/jquery-2.2.4.min.js" type="text/javascript"></script>
+	<script src="../../AddOn/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="../../AddOn/js/jquery.bootstrap.wizard.js" type="text/javascript"></script>
 
 	<!--  Plugin for the Wizard -->
-	<script src="assets/js/gsdk-bootstrap-wizard.js"></script>
+	<script src="../../AddOn/js/gsdk-bootstrap-wizard.js"></script>
 
-	<script src="assets/js/jquery.validate.min.js"></script>
+	<script src="../../AddOn/js/jquery.validate.min.js"></script>
 
 </html>

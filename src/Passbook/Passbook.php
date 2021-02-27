@@ -4,7 +4,7 @@
 	<title>PASSBOOK</title>
 	<style type="text/css">
 		body{
-			background-image: url('3.jpg');
+			background-image: url('../../assets/3.jpg');
 		}
 		table {
 			border-collapse: collapse;
@@ -68,34 +68,23 @@ $password = "";
 $database = "Paytm";
 $conn = mysqli_connect($servername, $username, $password, $database);
 
-// if(!$conn)
-// {
-// 	die("failed");
-// }
-// else
-// 	echo "success<br>";
 session_start();
 $mobNo = $_SESSION['regName'];
 $tableCred = "select * from MoneyCredited";
 $cred = mysqli_query($conn, $tableCred);
-while($row=mysqli_fetch_array($cred,MYSQLI_ASSOC))
-{
-	if($mobNo == $row['MobileNo'])
-	{
-		$dt = $row["Date"];
-		$t =$row["Time"];
-		$srch = "select MobileNo from MoneyDebited where `Date` = '$dt' and `Time` = '$t' ";
-		$run = mysqli_query($conn, $srch);
-		$value = mysqli_fetch_array($run);
-		if($value)
-			echo "<tr><td>".$row["Amount"]."</td><td>".$row["Date"]."</td><td>".$row["Time"]."</td><td>".$value[0]."</td></tr>";		
-		else
-		{
-			echo "<tr><td>".$row["Amount"]."</td><td>".$row["Date"]."</td><td>".$row["Time"]."</td><td>"."Card"."</td></tr>";		
-		}
-
-	}
-	
+while ($row=mysqli_fetch_array($cred, MYSQLI_ASSOC)) {
+    if ($mobNo == $row['MobileNo']) {
+        $dt = $row["Date"];
+        $t =$row["Time"];
+        $srch = "select MobileNo from MoneyDebited where `Date` = '$dt' and `Time` = '$t' ";
+        $run = mysqli_query($conn, $srch);
+        $value = mysqli_fetch_array($run);
+        if ($value) {
+            echo "<tr><td>".$row["Amount"]."</td><td>".$row["Date"]."</td><td>".$row["Time"]."</td><td>".$value[0]."</td></tr>";
+        } else {
+            echo "<tr><td>".$row["Amount"]."</td><td>".$row["Date"]."</td><td>".$row["Time"]."</td><td>"."Card"."</td></tr>";
+        }
+    }
 }
 mysqli_close($conn);
 ?>
@@ -111,7 +100,7 @@ mysqli_close($conn);
 		<th>Time</th>
 		<th>Sent To</th>
 	</tr>
-<?php 
+<?php
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -124,21 +113,19 @@ $mobNo = $_SESSION['regName'];
 
 $tableDebt = "select * from MoneyDebited";
 $debt = mysqli_query($conn, $tableDebt);
-while($row=mysqli_fetch_array($debt,MYSQLI_ASSOC))
-{
-	if($mobNo == $row['MobileNo'])
-	{
-		$dt = $row["Date"];
-		$t =$row["Time"];
-		$srch = "select MobileNo from MoneyCredited where `Date` = '$dt' and `Time` = '$t' ";
-		$run = mysqli_query($conn, $srch);
-		$value = mysqli_fetch_array($run);
-		if($value)
-			echo "<tr><td>".$row["Amount"]."</td><td>".$row["Date"]."</td><td>".$row["Time"]."</td><td>".$value[0]."</td></tr>";	
-		else
-			echo "<tr><td>".$row["Amount"]."</td><td>".$row["Date"]."</td><td>".$row["Time"]."</td><td>"."Recharge Done!"."</td></tr>";		
-
-	}
+while ($row=mysqli_fetch_array($debt, MYSQLI_ASSOC)) {
+    if ($mobNo == $row['MobileNo']) {
+        $dt = $row["Date"];
+        $t =$row["Time"];
+        $srch = "select MobileNo from MoneyCredited where `Date` = '$dt' and `Time` = '$t' ";
+        $run = mysqli_query($conn, $srch);
+        $value = mysqli_fetch_array($run);
+        if ($value) {
+            echo "<tr><td>".$row["Amount"]."</td><td>".$row["Date"]."</td><td>".$row["Time"]."</td><td>".$value[0]."</td></tr>";
+        } else {
+            echo "<tr><td>".$row["Amount"]."</td><td>".$row["Date"]."</td><td>".$row["Time"]."</td><td>"."Recharge Done!"."</td></tr>";
+        }
+    }
 }
 mysqli_close($conn);
 
