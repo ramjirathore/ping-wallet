@@ -23,7 +23,7 @@ while($row=mysqli_fetch_array($ch,MYSQLI_ASSOC))
 		session_start();
 
 		$_SESSION['regName'] = $mobNo;
-		header('Location: Afterlogin.php');
+		header('Location: ../../Afterlogin.php');
  		exit;
 
 		break;

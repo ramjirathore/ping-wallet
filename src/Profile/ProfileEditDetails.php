@@ -28,7 +28,7 @@ while($row=mysqli_fetch_array($ch,MYSQLI_ASSOC))
 
      if($ch)
       echo "<script> alert('Details Changed!');
-    window.location.href='Afterlogin.php';</script>";
+    window.location.href='../Afterlogin.php';</script>";
     break;
   }
  

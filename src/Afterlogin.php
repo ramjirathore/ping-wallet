@@ -5,9 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
+  <link rel="stylesheet" href="../public/style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 <?php
         session_start();
@@ -95,14 +94,13 @@ while($row=mysqli_fetch_array($ch,MYSQLI_ASSOC))
     }
   </style>
   <script>
-var myWindow;
 function Win() {
-  window.open('paytm.php','_blank');
-  window.close();
+    window.open('../public','_blank');
+    window.close();
 }
 </script>
 </head>
-<body background="assets/back2.jpg">
+<body background="../assets/back2.jpg">
 
 
 <nav class="navbar navbar-inverse top">
@@ -112,7 +110,7 @@ function Win() {
     </div>
     
     <ul class="nav navbar-nav navbar-right">
-        <li><a href ="Notify.php" style="font-size: 15px; margin-top :2px;color: white;"><button type="button" class="btn btn-success"><strong>NOTIFICATIONS</strong></button></a></li>
+        <li><a href ="./Notifications/Notify.php" style="font-size: 15px; margin-top :2px;color: white;"><button type="button" class="btn btn-success"><strong>NOTIFICATIONS</strong></button></a></li>
 
         <li><a href="#"><i class="far fa-user-circle" style="font-size: 20px; color: white;"></i><div class="caption">Hello<b> <?php user(); ?></b> </div></a></li>
       
@@ -128,17 +126,17 @@ function Win() {
 
       <div class="navbar navbar-inverse try col-sm-10">
         <ul class="nav navbar-nav col-sm-8">
-          <li><a href="pay.php"><i class="fab fa-amazon-pay"></i><div class="caption">PAY</div></a></li>
-          <li><a href="Addmoney.php"><i class="fas fa-rupee-sign" ></i><div class="caption">ADD MONEY</div></a></li>
-          <li><a href="Passbook.php"><i class="fas fa-book"></i><div class="caption">PASSBOOK</div></a></li>
-          <li><a href="RequestPayment.php"><i class="far fa-arrow-alt-circle-down"></i><div class="caption">REQUEST PAYMENT</div></a></li>
-          <li><a href="Profile.php"><i class="fas fa-user"></i><div class="caption">PROFILE</div></a></li>
+          <li><a href="./Pay/pay.php"><i class="fab fa-amazon-pay"></i><div class="caption">PAY</div></a></li>
+          <li><a href="./AddMoney/Addmoney.php"><i class="fas fa-rupee-sign" ></i><div class="caption">ADD MONEY</div></a></li>
+          <li><a href="./Passbook.php"><i class="fas fa-book"></i><div class="caption">PASSBOOK</div></a></li>
+          <li><a href="./RequestPayment/RequestPayment.php"><i class="far fa-arrow-alt-circle-down"></i><div class="caption">REQUEST PAYMENT</div></a></li>
+          <li><a href="./Profile/Profile.php"><i class="fas fa-user"></i><div class="caption">PROFILE</div></a></li>
         </ul>
         <ul>
           <div class ="col-sm-1"></div>
         </ul>
         <div class ="nav navbar-nav col-sm-3" style="margin-left: 100px;">
-          <li><a href="Profile.php"  style="font-size: 28px; margin-left: 70px; margin-top: 28px;color: white;"><div class="caption"><strong  style="color: white;"><kbd><u>YOUR BALANCE</u></kbd><br><br><big style="color: #000000;"><?php bal();?></big></strong></div></a></li>
+          <li><a href="./Profile/Profile.php"  style="font-size: 28px; margin-left: 70px; margin-top: 28px;color: white;"><div class="caption"><strong  style="color: white;"><kbd><u>YOUR BALANCE</u></kbd><br><br><big style="color: #000000;"><?php bal();?></big></strong></div></a></li>
         </div>
       </div>
     <div class="container-fluid">
@@ -170,7 +168,7 @@ function Win() {
           </label>LOGOUT
       </form> -->
 
-      <form class="form-inline" action = "deductDth.php" method="POST">
+      <form class="form-inline" action = "./Pay/deductDth.php" method="POST">
 
         <!-- <input type="" name="" class="form-control input" placeholder="Mobile Number"> -->
         
@@ -182,13 +180,13 @@ function Win() {
               <button class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown">Select Operator
               <span class="caret"></span></button>
                 <ul class="dropdown-menu">
-                  <li><a href="#"><img src="assets/airtel.jpg" class="img-circle" alt="Cinque Terre" width="30" height="30"> 
+                  <li><a href="#"><img src="../assets/airtel.jpg" class="img-circle" alt="Cinque Terre" width="30" height="30"> 
                   <strong>Airtel Digital TV</strong></a></li>
-                  <li><a href="#"><img src="assets/d2h.jpg" class="img-circle" alt="Cinque Terre" width="30" height="30"> 
+                  <li><a href="#"><img src="../assets/d2h.jpg" class="img-circle" alt="Cinque Terre" width="30" height="30"> 
                   <strong>Videocon d2h</strong></a></li>                 
-                  <li><a href="#"><img src="assets/tatasky.png" class="img-circle" alt="Cinque Terre" width="30" height="30"> 
+                  <li><a href="#"><img src="../assets/tatasky.png" class="img-circle" alt="Cinque Terre" width="30" height="30"> 
                   <strong>Tata Sky</strong></a></li>
-                  <li><a href="#"><img src="assets/dishtv.gif" class="img-circle" alt="Cinque Terre" width="30" height="30"> 
+                  <li><a href="#"><img src="../assets/dishtv.gif" class="img-circle" alt="Cinque Terre" width="30" height="30"> 
                   <strong>Dish TV</strong></a></li>
                 </ul>
           </div>

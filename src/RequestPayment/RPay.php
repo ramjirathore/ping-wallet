@@ -28,7 +28,7 @@ $amnt = $_POST['amnt'];
           die(mysqli_error($conn));
       else
          {
-            header('Location: Afterlogin.php');
+            header('Location: ../Afterlogin.php');
             exit;
          }
 

@@ -4,7 +4,7 @@
 	<title>PASSBOOK</title>
 	<style type="text/css">
 		body{
-			background-image: url('assets/3.jpg');
+			background-image: url('../assets/3.jpg');
 		}
 		table {
 			border-collapse: collapse;

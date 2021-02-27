@@ -44,7 +44,7 @@ $pass = $_POST['pass'];
                 $updtBalFrom = "UPDATE Balance SET Bal = (Bal - $amnt)  WHERE MobileNo = $mobNoFrom";
                 mysqli_query($conn,$updtBalFrom);
                 echo "<script> alert('Payment Successful!');
-                window.location.href='Afterlogin.php';</script>";
+                window.location.href='../Afterlogin.php';</script>";
 
             }
             

@@ -4,7 +4,7 @@
 	<title>NOTIFICATIONS</title>
 		<style type="text/css">
 		body{
-			background-image: url('assets/noti.jpg');
+			background-image: url('../assets/noti.jpg');
 			background-size: auto;                      
     		background-repeat:   no-repeat;
     		/*background-position: center center;*/
@@ -56,7 +56,7 @@
 			<h4><div class="bgt"><strong>REQUESTS</strong></div></h4>
 		</div>
 		<div class="col-sm-2">
-			<h4><div class="bgt2"><a href="Afterlogin.php"><button type="button" class="btn buton btn-info btn-lg">Go Back</button></a>
+			<h4><div class="bgt2"><a href="../Afterlogin.php"><button type="button" class="btn buton btn-info btn-lg">Go Back</button></a>
 			<a href="deleteNoti.php"><button type="button" class="btn buton btn-danger btn-lg">Clear All</button></a></div></h4>
 		</div>
 	</div>

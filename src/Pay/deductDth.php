@@ -26,7 +26,7 @@ $conn = mysqli_connect($servername, $username, $password ,$database);
      if($ch)
      { 
         echo "<script>
-        window.location.href='Afterlogin.php';</script>";
+        window.location.href='../Afterlogin.php';</script>";
         
     }   
         mysqli_close($conn);

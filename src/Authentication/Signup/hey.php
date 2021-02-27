@@ -30,7 +30,7 @@ $bal ="insert into Balance values($mob,0)";
 mysqli_query($conn, $bal);
 if(mysqli_query($conn, $insert))
 {
-	header('Location: paytm.php');
+	header('Location: ../../../public');
 	exit;
 }
 else
