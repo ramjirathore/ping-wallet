@@ -17,7 +17,7 @@ function user()
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $database = "Paytm";
+    $database = "E-wallet";
     $conn = mysqli_connect($servername, $username, $password, $database);
 
     //session_start();
@@ -44,7 +44,7 @@ function bal()
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $database = "Paytm";
+    $database = "E-wallet";
     $conn = mysqli_connect($servername, $username, $password, $database);
 
     //session_start();

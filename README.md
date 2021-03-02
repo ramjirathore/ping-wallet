@@ -116,9 +116,9 @@ $ cd e-wallet
 
 > You can manage the database using `http://localhost/phpmyadmin/`
 
-Database:
+Database name:
 
-- **Paytm**
+- **e-wallet**
 
 Tables:
 
