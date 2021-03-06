@@ -4,7 +4,7 @@ session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "Paytm";
+$database = "E-wallet";
 $conn = mysqli_connect($servername, $username, $password, $database);
   
 $mobNo = $_SESSION['regName'];
